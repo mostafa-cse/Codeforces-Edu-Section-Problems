@@ -1,1 +1,1 @@
-# Codeforces-Edu-Section-Problems-
+# Codeforces-Edu-Section-Problems
