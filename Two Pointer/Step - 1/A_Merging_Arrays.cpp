@@ -11,7 +11,8 @@ int32_t main() {
     cin >> n >> m;
 
     vector<int> a(n), b(m);
-    cin >> a >> b;
+    for (int &i : a) cin >> i;
+    for (int &i : b) cin >> i;
 
     int i = 0, j = 0;
     while (i < n and j < m) {
