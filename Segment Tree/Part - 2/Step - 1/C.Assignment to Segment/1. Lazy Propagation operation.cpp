@@ -1,0 +1,81 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+struct segment_tree{
+    vector<pair<int, int>> sgt, lazy;
+    int n;
+    segment_tree(int N) {
+        this->n = N;
+        sgt.assign(N * 4, {0, 0});
+        lazy.assign(N * 4, {0, 0});
+    }
+    pair<int, int> combine(pair<int, int> left, pair<int, int> right) {
+        if (left.second > right.second) return left;
+        return right;
+    }
+    void push(int node, int start, int end) {
+        if (lazy[node].second != 0) {
+            sgt[node] = combine(lazy[node], sgt[node]);
+            if (start != end) {
+                lazy[node * 2] = combine(lazy[node], lazy[node * 2]);
+                lazy[node * 2 + 1] = combine(lazy[node], lazy[node * 2 + 1]);
+            }
+            lazy[node] = {0, 0};
+        }
+    }
+    void update(int node, int start, int end, int l, int r, int value, int id){
+        push(node, start, end);
+        if (start > r or end < l) {
+            return;
+        }
+        
+        if (start >= l and  r >= end){
+            lazy[node] = combine({value, id}, lazy[node]);
+            push(node, start, end);
+            return;
+        }
+        int mid = start + (end - start) / 2;
+        update(node * 2, start, mid, l, r, value, id);
+        update(node * 2 + 1, mid + 1, end, l, r, value, id);
+        sgt[node] = combine(sgt[2 * node], sgt[2 * node + 1]);
+    }
+    pair<int, int> query(int node, int start, int end, int ql, int qr) {
+        push(node, start, end);
+        if (start > qr or end < ql) {
+            return {0, 0}; // Edit here
+        }
+        if (start >= ql and end <= qr) {
+            return sgt[node];
+        }
+        int mid = start + (end - start) / 2;
+        pair<int, int> left = query(node * 2, start, mid, ql, qr);
+        pair<int, int> right = query(node * 2 + 1, mid + 1, end, ql, qr);
+        return combine(left, right);
+    }
+    void update(int l, int r, int val, int id) { update(1, 1, n, l, r, val, id); }
+    pair<int, int> query(int l, int r) { return query(1, 1, n, l, r); }
+};  
+
+signed main() {
+    int n, q;
+    cin >> n >> q;
+
+    int id = 1;
+    segment_tree a(n);
+    while (q--) {
+        int op;
+        cin >> op;
+
+        if (op & 1) {
+            int l, r, v;
+            cin >> l >> r >> v;
+            a.update(l + 1, r, v, id++);
+        } else {
+            int i;
+            cin >> i;
+
+            cout << a.query(i + 1, i + 1).first << endl;
+        }
+    }
+    return 0;
+}
