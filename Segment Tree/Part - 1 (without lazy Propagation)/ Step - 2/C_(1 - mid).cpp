@@ -78,7 +78,7 @@ signed main() {
             int l = 1, r = n, ans = 0;
             while (l <= r) {
                 int mid = (l + r) / 2;
-                if (a.query(1, mid) >= x) {
+                if (a.query(1, mid) >= x) { // here
                     ans = mid;
                     r = mid - 1;
                 } else {
