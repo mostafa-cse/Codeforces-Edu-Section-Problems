@@ -66,12 +66,12 @@ signed main() {
         int op;
         cin >> op;
 
-        if (op & 1) { // update
+        if (op & 1) {  // update
             int i, v;
             cin >> i >> v;
             i += 1;
             a.update(i, v);
-        } else { // Query 
+        } else {       // Query 
             int l, r;
             cin >> l >> r;
             l += 1, r += 1;
