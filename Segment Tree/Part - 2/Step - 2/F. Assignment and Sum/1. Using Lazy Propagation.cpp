@@ -9,20 +9,18 @@ struct SegmentTree {
 
     SegmentTree(int size) {
         n = size;
-        tree.assign(4 * n, 0);
-        lazy.assign(4 * n, 0);
-        is_lazy.assign(4 * n, false);
+        tree.assign(4 * n + 1, 0);
+        lazy.assign(4 * n + 1, 0);
     }
 
     void push(int node, int l, int r) {
-        if (is_lazy[node]) {
+        if (lazy[node] != -1) {
             tree[node] = (r - l + 1) * lazy[node];
             if (l != r) {
                 lazy[2 * node] = lazy[node];
                 lazy[2 * node + 1] = lazy[node];
-                is_lazy[2 * node] = is_lazy[2 * node + 1] = true;
             }
-            is_lazy[node] = false;
+            lazy[node] = -1;
         }
     }
 
@@ -31,7 +29,6 @@ struct SegmentTree {
         if (r < ul || l > ur) return;
         if (ul <= l && r <= ur) {
             lazy[node] = val;
-            is_lazy[node] = true;
             push(node, l, r);
             return;
         }
@@ -48,14 +45,8 @@ struct SegmentTree {
         int mid = (l + r) / 2;
         return query(2 * node, l, mid, ql, qr) + query(2 * node + 1, mid + 1, r, ql, qr);
     }
-
-    void update(int l, int r, int val) {
-        update(1, 1, n, l, r, val);
-    }
-
-    int query(int l, int r) {
-        return query(1, 1, n, l, r);
-    }
+    void update(int l, int r, int val) { update(1, 1, n, l, r, val); }
+    int query(int l, int r) { return query(1, 1, n, l, r); }
 };
 
 signed main() {
@@ -67,14 +58,14 @@ signed main() {
     while (q--) {
         int op, l, r;
         cin >> op >> l >> r;
-        l++; // shifting to 1-based inclusive
+        l++, r++;
 
         if (op == 1) {
             int v;
             cin >> v;
-            seg.update(l, r, v);
+            seg.update(l, r - 1, v);
         } else {
-            cout << seg.query(l, r) << '\n';
+            cout << seg.query(l, r - 1) << '\n';
         }
     }
 
