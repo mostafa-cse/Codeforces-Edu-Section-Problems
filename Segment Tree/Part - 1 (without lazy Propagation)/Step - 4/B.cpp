@@ -44,6 +44,8 @@ matrix query(int node, int l, int r, int ql, int qr) {
     return Ans(left, right);
 }
 signed main() {
+    ios_base::sync_with_stdio(false); 
+    cin.tie(NULL); cout.tie(NULL);
     int n, m;
     cin >> R >> n >> m;
 
