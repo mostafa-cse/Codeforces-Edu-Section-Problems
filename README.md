@@ -22,7 +22,6 @@ This repository contains my solutions and detailed notes on **Disjoint Set Union
 
 ## 📂 Repository Structure
 
-```bash
 Data-Structures-Algorithms/
 ├── DSU/
 │   ├── Step - 1
@@ -62,4 +61,3 @@ Data-Structures-Algorithms/
 │
 ├── README.md
 └── LICENSE
-```
