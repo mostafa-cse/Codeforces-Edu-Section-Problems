@@ -21,7 +21,7 @@ This repository contains my solutions and detailed notes on **Disjoint Set Union
 - **Two Pointers** (sliding window, pair-sum, subarray techniques)  
 
 ## 📂 Repository Structure
-
+```
 Data-Structures-Algorithms/
 ├── DSU/
 │   ├── Step - 1
@@ -61,3 +61,41 @@ Data-Structures-Algorithms/
 │
 ├── README.md
 └── LICENSE
+```
+⚙️ Installation & Compilation
+Ensure you have a C++ compiler installed. To compile and run any solution:
+
+🚀 Usage Examples
+Each .cpp file begins with a comment block detailing:
+This makes it easy to understand the problem statement and solution approach at a glance.
+
+🤝 Contributing
+Contributions are welcome!
+
+Fork the repo
+
+Create a branch:
+
+```
+bash
+'' git checkout -b feature/<topic-name> ''
+```
+Add your solution with proper naming (05_problem_name.cpp)
+
+Commit with a descriptive message (git commit -m "Add sliding window max in Two Pointers")
+
+Open a Pull Request and describe your changes
+
+📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+✉️ Contact
+Your Name – onceilovesabnaj@gmail.com
+Project Link: [Codeforces Edu Problems Solution in C++ ](https://github.com/once-ilovesabnaj/Codeforces-Edu-Section-Problems/edit/main/README.md)
+
+makefile
+Copy
+Edit
+::contentReference[oaicite:10]{index=10}
+
+
