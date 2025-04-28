@@ -6,11 +6,6 @@ This repository contains my solutions and detailed notes on **Disjoint Set Union
 
 - [📚 Topics Covered](#-topics-covered)  
 - [📂 Repository Structure](#-repository-structure)  
-- [⚙️ Installation & Compilation](#️-installation--compilation)  
-- [🚀 Usage Examples](#-usage-examples)  
-- [🤝 Contributing](#-contributing)  
-- [📜 License](#-license)  
-- [✉️ Contact](#-contact)  
 
 ## 📚 Topics Covered
 
@@ -58,44 +53,5 @@ Data-Structures-Algorithms/
 │   ├── Step - 1
 │   ├── Step - 2
 │   └── Step - 3 
-│
-├── README.md
-└── LICENSE
+└── ReadMe
 ```
-⚙️ Installation & Compilation
-Ensure you have a C++ compiler installed. To compile and run any solution:
-
-🚀 Usage Examples
-Each .cpp file begins with a comment block detailing:
-This makes it easy to understand the problem statement and solution approach at a glance.
-
-🤝 Contributing
-Contributions are welcome!
-
-Fork the repo
-
-Create a branch:
-
-```
-bash
-'' git checkout -b feature/<topic-name> ''
-```
-Add your solution with proper naming (05_problem_name.cpp)
-
-Commit with a descriptive message (git commit -m "Add sliding window max in Two Pointers")
-
-Open a Pull Request and describe your changes
-
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-✉️ Contact
-Your Name – onceilovesabnaj@gmail.com
-Project Link: [Codeforces Edu Problems Solution in C++ ](https://github.com/once-ilovesabnaj/Codeforces-Edu-Section-Problems/edit/main/README.md)
-
-makefile
-Copy
-Edit
-::contentReference[oaicite:10]{index=10}
-
-
