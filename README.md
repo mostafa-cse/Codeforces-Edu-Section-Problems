@@ -24,6 +24,7 @@ Data-Structures-Algorithms/
 │   ├── Step - 3
 │   └── Step - 4 
 │
+│
 ├── Segment_Tree/
 |   ├── Part - 1
 |   |      ├── Step - 1
@@ -35,12 +36,14 @@ Data-Structures-Algorithms/
 |          ├── Step - 2
 |          ├── Step - 3
 |          └── Step - 4
+│
 ├── Binary_Search/
 │   ├── Step - 1
 │   ├── Step - 2
 │   ├── Step - 3
 |   ├── Step - 4
 │   └── Step - 5 
+│
 │
 ├── Suffix_Array/
 │   ├── Step - 1
@@ -49,9 +52,12 @@ Data-Structures-Algorithms/
 |   ├── Step - 4
 │   └── Step - 5 
 │
+│
 ├── Two_Pointers/
 │   ├── Step - 1
 │   ├── Step - 2
-│   └── Step - 3 
+│   └── Step - 3
+│
+│
 └── ReadMe
 ```
