@@ -26,14 +26,14 @@ int32_t main() {
     	for (int i = n; i - d >= 0; i--) {
     		if (pfx[i] >= 0) {
     			lt = 1;
-				rt = i;
-				return true;
+			rt = i;
+			return true;
     		}
 
     		if (mnpfx[i - d] <= pfx[i]) {
     			lt = idx[i - d] + 1;
     			rt = i;
-				return true;
+			return true;
     		}
     	}
     	return false;
