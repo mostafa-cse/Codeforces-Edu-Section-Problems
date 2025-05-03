@@ -15,8 +15,8 @@ struct DSU {
             point[i] = 0;
         }
     }
-    int find(int u) {
-        if (par[u] == u) {
+    int find(int u) {     // We don't use any path comperssion technique
+        if (par[u] == u) { 
             return u;
         }
         return find(par[u]);
@@ -30,7 +30,7 @@ struct DSU {
         if (sz[ru] < sz[rv]) {
             swap(ru, rv);
         }
-        point[rv] -= point[ru];
+        point[rv] = point[rv] - point[ru];
         par[rv] = ru;
         sz[ru] += sz[rv];
         sz[rv] = 0;
