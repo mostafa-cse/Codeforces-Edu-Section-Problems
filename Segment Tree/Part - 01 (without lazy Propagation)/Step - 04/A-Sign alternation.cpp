@@ -1,4 +1,4 @@
-using namespace __gnu_pbds;
+#include<bits/stdc++.h>
 #define int long long
 using namespace std;
 
